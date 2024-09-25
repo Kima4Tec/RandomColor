@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    button{
+justify-content: space-evenly;
+padding: 10px;
+margin: 10px;
+        width: 200px;
+        height: 50px;
+        border-radius: 10px;
+        font: bold 16pt sans-serif;
+        box-shadow: 2px 2px 4px black;
+    }
+</style>
+
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    const colorButtons = `<button onclick="document.body.style.backgroundColor = 'green'">Green</button>
+    <button onclick="document.body.style.backgroundColor = 'blue'">Blue</button>
+    <button onclick="document.body.style.backgroundColor = 'red'">Red</button>
+    <button onclick="document.body.style.backgroundColor = 'lightgray'">Lightgray</button>
+    <button onclick="getColors()">Random</button>`
+    
+    document.querySelector("body").innerHTML = colorButtons
+
+    document.querySelectorAll("button")[0].style.backgroundColor = "green";
+    document.querySelectorAll("button")[1].style.backgroundColor = "blue";
+    document.querySelectorAll("button")[2].style.backgroundColor = "red";
+    document.querySelectorAll("button")[3].style.backgroundColor = "lightgray";
+    document.querySelectorAll("button")[4].style.backgroundColor = "white";
+    
+
+let max = 255
+
+const getRandomInt = () => {
+    return Math.floor(Math.random() * max);
+}
+
+function getColors(){
+    let red = getRandomInt();
+    let green = getRandomInt(); 
+    let blue = getRandomInt();
+    showRandom(red, green, blue);
+}
+
+function showRandom(red, green, blue){
+    document.body.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;}
+
+</script>
+
+</body>
+
+</html>
